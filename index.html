@@ -28,5 +28,86 @@
         </div>
       </div>
     </div>
+    <!-- About section -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="./images/user.png" alt="" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="subtitle">About Me</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              odio delectus doloribus quisquam. Quo quae porro quisquam modi
+              corrupti quibusdam sequi! Consequuntur magni voluptatum cum,
+              voluptate, obcaecati dolor inventore eligendi fugiat quam
+              laboriosam natus nesciunt odio ratione quaerat quibusdam,
+              necessitatibus deleniti debitis ea vitae tempora dolorum. Sunt,
+              beatae! Aperiam, molestias.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('Skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="Skills">
+              <ul>
+                <li><span>UI/UX</span><br />Designing Web/App interfaces</li>
+                <li><span>Web App</span><br />Web App Development</li>
+                <li>
+                  <span>App Development</span><br />Building Android / IOS App
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>Company 1</span><br />Designing Web/App interfaces
+                </li>
+                <li><span>Company 2</span><br />Web App Development</li>
+                <li><span>Company 3</span><br />Building Android / IOS App</li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>University</span><br />Designing Web/App interfaces
+                </li>
+                <li><span>College</span><br />Web App Development</li>
+                <li><span>School</span><br />Building Android / IOS App</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let tablinks = document.getElementsByClassName("tab-links");
+
+      let tabContents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+
+        for (tabContent of tabContents) {
+          tabContent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
   </body>
 </html>
